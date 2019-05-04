@@ -1,0 +1,61 @@
+{
+  "name": "node-inspector-server",
+  "version": "0.0.1",
+  "description": "Inspect Node instances deep in the process tree",
+  "main": "dist/lib/index",
+  "types": "dist/lib/index.d.ts",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/demurgos/node-inspector-server.git"
+  },
+  "scripts": {
+    "prepare": "exit 0 && gulp all:tsconfig.json && gulp :tslint.json && gulp dist",
+    "pretest": "gulp :lint && gulp lib:build",
+    "test": "gulp test",
+    "prestart": "gulp main:build",
+    "start": "npm test",
+    "prepublishOnly": "npm test",
+    "lint": "gulp :lint:fix",
+    "typedoc": "gulp lib:typedoc"
+  },
+  "pre-commit": {
+    "run": [
+      "test"
+    ]
+  },
+  "keywords": [],
+  "license": "MIT",
+  "dependencies": {
+    "@types/object-inspect": "^1.4.0",
+    "@types/tail": "^1.2.1",
+    "incident": "^3.2.0",
+    "rimraf": "^2.6.3",
+    "rxjs": "^6.5.1",
+    "signal-exit": "^3.0.2",
+    "tail": "^2.0.2",
+    "tmp": "^0.1.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.7",
+    "@types/gulp": "^4.0.6",
+    "@types/minimist": "^1.2.0",
+    "@types/mocha": "^5.2.6",
+    "@types/node": "^11.13.8",
+    "chai": "^4.2.0",
+    "codecov": "^3.3.0",
+    "gulp": "^4.0.1",
+    "gulp-cli": "^2.2.0",
+    "minimist": "^1.2.0",
+    "pre-commit": "^1.2.2",
+    "ts-node": "^8.1.0",
+    "turbo-gulp": "^0.19.0",
+    "typescript": "^3.4.5"
+  },
+  "c88": {
+    "match": [
+      "build/test/lib/*.{js,mjs}",
+      "build/test/lib/**/*.{js,mjs}"
+    ]
+  }
+}

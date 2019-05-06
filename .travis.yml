@@ -9,7 +9,9 @@ node_js:
   - 12
 
 script:
-  - npm test
+  - gulp :lint
+  - gulp test:build
+  - mocha build/test/test.cjs
 #  - echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
 #  - ./tools/continuous-deployment.travis.sh
 

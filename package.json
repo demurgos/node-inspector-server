@@ -16,13 +16,17 @@
     "prestart": "gulp main:build",
     "start": "npm test",
     "prepublishOnly": "npm test",
-    "lint": "gulp :lint:fix",
+    "lint": "gulp :lint",
+    "format": "gulp :lint:fix",
     "typedoc": "gulp lib:typedoc"
   },
   "pre-commit": {
     "run": [
-      "test"
+      "lint"
     ]
+  },
+  "engines": {
+    "node": ">=12"
   },
   "keywords": [],
   "license": "MIT",
@@ -43,6 +47,7 @@
     "@types/mocha": "^5.2.6",
     "@types/node": "^11.13.8",
     "chai": "^4.2.0",
+    "chrome-remote-interface": "^0.27.1",
     "codecov": "^3.3.0",
     "gulp": "^4.0.1",
     "gulp-cli": "^2.2.0",

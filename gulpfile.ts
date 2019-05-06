@@ -71,6 +71,11 @@ const test: MochaTarget = {
     skipLibCheck: true,
   },
   // generateTestMain: true,
+  copy: [
+    {
+      files: ["test/fixtures/**/*.js"],
+    },
+  ],
   clean: {
     dirs: ["build/test"],
   },

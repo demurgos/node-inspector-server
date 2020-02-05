@@ -1,4 +1,4 @@
-# Next
+# 0.1.0 (2020-02-05)
 
 - **[Fix]** Update dependencies.
 - **[Fix]** Ensure the module is not packed by Yarn by adding a `postinstall` script.

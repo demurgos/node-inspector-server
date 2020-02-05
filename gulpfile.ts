@@ -45,7 +45,7 @@ const lib: LibTarget = {
     dir: "typedoc",
     name: "Node Inspector Server",
     deploy: {
-      repository: "git@github.com:demurgos/kryo.git",
+      repository: "git@github.com:demurgos/node-inspector-server.git",
       branch: "gh-pages",
     },
   },

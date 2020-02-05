@@ -1,3 +1,7 @@
+# Next
+
+- **[Fix]** Ensure `postinstall` exists in dist build.
+
 # 0.1.0 (2020-02-05)
 
 - **[Fix]** Update dependencies.

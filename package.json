@@ -1,6 +1,6 @@
 {
   "name": "node-inspector-server",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Inspect Node instances deep in the process tree",
   "main": "dist/lib/index",
   "types": "dist/lib/index.d.ts",

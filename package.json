@@ -10,20 +10,21 @@
     "url": "git://github.com/demurgos/node-inspector-server.git"
   },
   "scripts": {
-    "prepare": "exit 0 && gulp all:tsconfig.json && gulp :tslint.json && gulp dist",
-    "pretest": "gulp :lint && gulp lib:build",
-    "test": "gulp test",
-    "prestart": "gulp main:build",
-    "start": "npm test",
-    "prepublishOnly": "npm test",
-    "lint": "gulp :lint",
-    "format": "gulp :lint:fix",
-    "typedoc": "gulp lib:typedoc"
+    "build": "gulp lib:build",
+    "watch": "gulp lib:watch",
+    "test": "gulp test:build && gulp test:run:cjs",
+    "lint": "gulp lint",
+    "format": "gulp format",
+    "typedoc": "gulp lib:typedoc",
+    "dist": "gulp lib:dist",
+    "prepare": "gulp all:tsconfig.json && gulp tslint.json && gulp dist",
+    "pretest": "gulp lint",
+    "prepublishOnly": "echo \"Use \\`gulp lib:publish\\`\" && exit 1"
   },
-  "pre-commit": {
-    "run": [
-      "lint"
-    ]
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn run lint"
+    }
   },
   "engines": {
     "node": ">=12"
@@ -31,31 +32,32 @@
   "keywords": [],
   "license": "MIT",
   "dependencies": {
-    "@types/object-inspect": "^1.4.0",
-    "@types/tail": "^1.2.1",
+    "@types/object-inspect": "^1.6.0",
+    "@types/tail": "^2.0.0",
+    "@types/tmp": "^0.1.0",
     "incident": "^3.2.0",
-    "rimraf": "^2.6.3",
-    "rxjs": "^6.5.1",
+    "rimraf": "^3.0.1",
+    "rxjs": "^6.5.4",
     "signal-exit": "^3.0.2",
-    "tail": "^2.0.2",
+    "tail": "^2.0.3",
     "tmp": "^0.1.0"
   },
   "devDependencies": {
-    "@types/chai": "^4.1.7",
+    "@types/chai": "^4.2.8",
     "@types/gulp": "^4.0.6",
     "@types/minimist": "^1.2.0",
-    "@types/mocha": "^5.2.6",
-    "@types/node": "^11.13.8",
+    "@types/mocha": "^7.0.1",
+    "@types/node": "^13.7.0",
     "chai": "^4.2.0",
-    "chrome-remote-interface": "^0.27.1",
-    "codecov": "^3.3.0",
-    "gulp": "^4.0.1",
+    "chrome-remote-interface": "^0.28.1",
+    "codecov": "^3.6.4",
+    "gulp": "^4.0.2",
     "gulp-cli": "^2.2.0",
+    "husky": "^4.2.1",
     "minimist": "^1.2.0",
-    "pre-commit": "^1.2.2",
-    "ts-node": "^8.1.0",
-    "turbo-gulp": "^0.19.0",
-    "typescript": "^3.4.5"
+    "ts-node": "^8.6.2",
+    "turbo-gulp": "^0.22.0",
+    "typescript": "^3.7.5"
   },
   "c88": {
     "match": [

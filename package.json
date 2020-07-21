@@ -50,7 +50,7 @@
     "@types/node": "^13.7.0",
     "chai": "^4.2.0",
     "chrome-remote-interface": "^0.28.1",
-    "codecov": "^3.6.4",
+    "codecov": "^3.7.1",
     "gulp": "^4.0.2",
     "gulp-cli": "^2.2.0",
     "husky": "^4.2.1",
